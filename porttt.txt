@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JeffVision.Port</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full glass z-50 p-5 flex justify-between items-center">
+    <h1 class="text-3xl font-bold text-green-200">JeffVision.Port</h1>
+    <nav class="space-x-6 hidden md:flex">
+      <a href="#services" class="hover:text-green-300">Services</a>
+      <a href="#pricing" class="hover:text-green-300">Pricing</a>
+      <a href="#deals" class="hover:text-green-300">Deals</a>
+      <a href="#portfolio" class="hover:text-green-300">Portfolio</a>
+      <a href="#contact" class="hover:text-green-300">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center p-10 fade-in">
+    <h2 class="text-5xl font-bold text-green-200 mb-4">Hi, I'm JeffVision</h2>
+    <p class="text-lg text-gray-300 max-w-2xl">Thumbnail & Graphic Designer specializing in Gaming, Podcasts, Documentaries, and Money Strategy visuals. Let's bring your vision to life.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-6 fade-in">
+    <h3 class="text-4xl font-bold text-center mb-12">Services</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+        <h4 class="text-xl font-semibold">Essential (Low)</h4>
+        <p class="text-gray-300">$4 per design</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+        <h4 class="text-xl font-semibold">Advanced (Medium)</h4>
+        <p class="text-gray-300">$8 per design</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+        <h4 class="text-xl font-semibold">Pro+ (High)</h4>
+        <p class="text-gray-300">$11 per design</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center hover:scale-105 transition-transform">
+        <h4 class="text-xl font-semibold">Masterpiece (Premium)</h4>
+        <p class="text-gray-300">$16 per design</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 px-6 fade-in">
+    <h3 class="text-4xl font-bold text-center mb-12">Pricing</h3>
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-lg text-gray-300 mb-4">Standard thumbnail design: <span class="text-green-300 font-semibold">$10 each</span></p>
+      <p class="text-lg text-gray-300 mb-4">Bundle packages available for bulk orders</p>
+    </div>
+  </section>
+
+  <!-- Deals -->
+  <section id="deals" class="py-20 px-6 fade-in">
+    <h3 class="text-4xl font-bold text-center mb-12">Deals</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass p-6 rounded-2xl text-center">
+        <h4 class="text-2xl font-semibold text-green-300">Monthly Deal</h4>
+        <p class="text-gray-300">Get <strong>20% off</strong> with a monthly subscription.</p>
+      </div>
+      <div class="glass p-6 rounded-2xl text-center">
+        <h4 class="text-2xl font-semibold text-green-300">6-Month Deal</h4>
+        <p class="text-gray-300">Save <strong>35% off</strong> with a 6-month package.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 px-6 fade-in">
+    <h3 class="text-4xl font-bold text-center mb-12">Portfolio</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src="https://via.placeholder.com/400x250" alt="Thumbnail Example" class="rounded-2xl hover:scale-105 transition-transform" />
+      <img src="https://via.placeholder.com/400x250" alt="Thumbnail Example" class="rounded-2xl hover:scale-105 transition-transform" />
+      <img src="https://via.placeholder.com/400x250" alt="Thumbnail Example" class="rounded-2xl hover:scale-105 transition-transform" />
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 fade-in text-center">
+    <h3 class="text-4xl font-bold mb-6">Contact</h3>
+    <p class="text-lg text-gray-300 mb-4">Email: <a href="mailto:jeffvision.visuals" class="text-green-300 hover:underline">jeffvision.visuals</a></p>
+    <a href="mailto:jeffvision.visuals" class="inline-block bg-green-300 text-black px-6 py-3 rounded-full font-bold hover:bg-green-400 transition">Hire Me</a>
+  </section>
+
+  <!-- Floating Hire Me Button -->
+  <a href="mailto:jeffvision.visuals" class="fixed bottom-6 right-6 bg-green-300 text-black px-6 py-3 rounded-full font-bold shadow-lg hover:bg-green-400 transition">Hire Me</a>
+
+  <script>
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
